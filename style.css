@@ -13,6 +13,8 @@
   --hairline: #D2D6D9;
   --serif: 'Fraunces', Georgia, serif;
   --sans: 'Inter', sans-serif;
+  --deep-grad: linear-gradient(135deg, #0A1626 0%, #14314D 55%, #1D4066 100%);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -51,22 +53,47 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(var(--ink), 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--hairline);
+  background: var(--deep-grad);
+  border-bottom: 1px solid rgba(184, 149, 68, 0.4);
+  box-shadow: 0 10px 30px rgba(6, 14, 24, 0.25);
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  pointer-events: none;
 }
 
 .header-row {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 28px;
+  padding: 16px 28px;
 }
 
 .brand {
+  position: relative;
   display: flex;
   align-items: center;
   text-decoration: none;
+}
+
+.brand::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(184, 149, 68, 0.32), transparent 70%);
+  filter: blur(4px);
+  z-index: -1;
 }
 
 .brand-logo {
@@ -79,7 +106,7 @@ header {
   background: none;
   border: none;
   font-size: 1.3rem;
-  color: var(--ink);
+  color: var(--parchment);
   cursor: pointer;
 }
 
@@ -93,7 +120,7 @@ header {
 .nav-link {
   font-size: 0.92rem;
   font-weight: 500;
-  color: var(--ink-soft);
+  color: rgba(247, 244, 236, 0.82);
   text-decoration: none;
   transition: color 0.25s ease;
 }
@@ -207,6 +234,80 @@ header {
 .split-body .lead { font-size: 1.2rem; color: var(--ink-soft); font-family: var(--serif); font-weight: 400; margin-bottom: 20px; }
 
 .split-body p { color: var(--text-muted); margin-bottom: 16px; max-width: 62ch; }
+
+/* ============================================
+   PRINCÍPIOS (Missão, Visão e Valores)
+   ============================================ */
+.principios {
+  position: relative;
+  background: var(--deep-grad);
+  padding: 110px 0;
+  overflow: hidden;
+}
+
+.principios::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.principios .container { position: relative; }
+
+.principios .eyebrow { color: var(--gold-bright); }
+
+.principios .section-head h2 {
+  color: var(--parchment);
+  font-size: 1.9rem;
+  max-width: 22ch;
+}
+
+.principios .section-head::after { background: rgba(184, 149, 68, 0.5); }
+
+.principios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px;
+  margin-top: 56px;
+}
+
+.principio {
+  padding-left: 30px;
+  border-left: 1px solid rgba(184, 149, 68, 0.3);
+}
+
+.principio:first-child { border-left: none; padding-left: 0; }
+
+.principio-num {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold-bright);
+  margin-bottom: 14px;
+}
+
+.principio p {
+  color: rgba(247, 244, 236, 0.78);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 34ch;
+}
+
+@media (max-width: 720px) {
+  .principios { padding: 80px 0; }
+  .principios-grid { grid-template-columns: 1fr; gap: 34px; margin-top: 38px; }
+  .principio {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 26px;
+    border-top: 1px solid rgba(184, 149, 68, 0.3);
+  }
+  .principio:first-child { border-top: none; padding-top: 0; }
+}
 
 /* ============================================
    ÁREAS DE ATUAÇÃO
@@ -373,4 +474,3 @@ header {
   .areas-grid { grid-template-columns: 1fr; }
   .hero { padding: 70px 0 60px; }
 }
-
