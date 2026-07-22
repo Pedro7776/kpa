@@ -327,32 +327,63 @@ header::after {
   margin-top: 18px;
 }
 
-.areas-grid {
+.areas-list { border-top: 1px solid var(--hairline); }
+
+.area-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--hairline);
-  border: 1px solid var(--hairline);
+  grid-template-columns: 90px 280px 1fr;
+  align-items: baseline;
+  gap: 24px;
+  padding: 26px 4px;
+  border-bottom: 1px solid var(--hairline);
+  transition: padding-left 0.35s ease, border-color 0.35s ease;
 }
 
-.area-card {
-  background: var(--panel);
-  padding: 36px 30px;
-  border-left: 3px solid transparent;
-  transition: background 0.25s ease, border-color 0.25s ease;
+.area-row:hover {
+  padding-left: 16px;
+  border-bottom-color: var(--gold);
 }
 
-.area-card:hover { background: #FBF9F3; border-left-color: var(--ink); }
+.area-index {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  color: var(--gold);
+}
 
-.area-card i { color: var(--ink-soft); font-size: 1.3rem; margin-bottom: 16px; }
+.area-name {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+  transition: color 0.3s ease;
+}
 
-.area-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.area-row:hover .area-name { color: var(--gold); }
 
-.area-card p { color: var(--text-muted); font-size: 0.92rem; }
+.area-desc {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  opacity: 0.55;
+  max-width: 46ch;
+  transition: opacity 0.35s ease;
+}
+
+.area-row:hover .area-desc { opacity: 1; }
 
 .areas-more { margin-top: 28px; color: var(--text-muted); font-size: 0.92rem; }
 
 .areas-more a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); }
+
+@media (max-width: 720px) {
+  .area-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 22px 4px;
+  }
+  .area-row:hover { padding-left: 4px; }
+  .area-desc { opacity: 0.75; max-width: none; }
+}
 
 /* ============================================
    ESCRITÓRIO
@@ -450,7 +481,6 @@ header::after {
 @media (max-width: 960px) {
   .hero-grid, .split, .contato-grid { grid-template-columns: 1fr; }
   .hero-panel { order: -1; max-width: 340px; }
-  .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .escritorio-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 140px 140px 140px; }
   .escritorio-frame.tall { grid-row: span 1; grid-column: span 2; }
 }
@@ -471,6 +501,6 @@ header::after {
   .nav-menu.show { right: 0; }
   .nav-menu .nav-link { color: var(--parchment); }
   .nav-cta { border-color: var(--gold); }
-  .areas-grid { grid-template-columns: 1fr; }
+  .areas-more { font-size: 0.88rem; }
   .hero { padding: 70px 0 60px; }
 }
