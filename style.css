@@ -331,7 +331,7 @@ header::after {
 
 .area-row {
   display: grid;
-  grid-template-columns: 90px 280px 1fr;
+  grid-template-columns: 150px 260px 1fr;
   align-items: baseline;
   gap: 24px;
   padding: 26px 4px;
@@ -347,9 +347,10 @@ header::after {
 .area-index {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
   color: var(--gold);
+  white-space: nowrap;
 }
 
 .area-name {
