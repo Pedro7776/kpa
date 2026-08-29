@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nossa Equipe — Kleber Pereira & Advogados Associados</title>
+<meta name="description" content="Conheça os advogados do escritório Kleber Pereira & Advogados Associados, suas áreas de atuação e contatos diretos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="container header-row">
+    <a href="index.html#home" class="brand">
+      <img src="logo.png" alt="Kleber Pereira & Advogados Associados" class="brand-logo">
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html#home" class="nav-link">Início</a></li>
+        <li><a href="index.html#quem-somos" class="nav-link">Quem Somos</a></li>
+        <li><a href="index.html#principios" class="nav-link">Princípios</a></li>
+        <li><a href="index.html#areas" class="nav-link">Áreas de Atuação</a></li>
+        <li><a href="index.html#escritorio" class="nav-link">Escritório</a></li>
+        <li><a href="equipe.html" class="nav-link active">Equipe</a></li>
+        <li><a href="index.html#contato" class="nav-link nav-cta">Fale Conosco</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="equipe-hero" class="hero equipe-hero">
+    <div class="container">
+      <div class="hero-copy fade-in equipe-hero-copy">
+        <span class="eyebrow">Nossa equipe</span>
+        <h1>Cada área tem um advogado <em>de referência</em>.</h1>
+        <p>Conheça quem cuida do seu caso. Fale diretamente com o advogado responsável pela sua área — ou entre em contato pelos canais gerais do escritório.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipe" class="areas equipe-section">
+    <div class="container">
+      <div class="section-head fade-in">
+        <span class="eyebrow">Advogados</span>
+        <h2>Quem faz parte do escritório</h2>
+      </div>
+
+      <div class="equipe-grid">
+
+        <!-- ================================================================
+             CARD REAL — Kleber Pereira
+             O id abaixo ("kleber-pereira") é o que os links de "Áreas de
+             Atuação" da página inicial usam para abrir direto neste card.
+             ================================================================ -->
+        <article class="advogado-card fade-in" id="kleber-pereira">
+          <div class="advogado-photo">
+            <img src="kleber-pereira.jpeg" alt="Kleber Pereira">
+          </div>
+          <div class="advogado-info">
+            <h3>Kleber Pereira</h3>
+            <span class="advogado-oab">OAB/SP · Sócio-fundador</span>
+            <ul class="advogado-especialidades">
+              <li>Direito de Família</li>
+              <li>Direito Empresarial</li>
+              <li>Direito Trabalhista</li>
+              <li>Direito Previdenciário</li>
+              <li>Direito Imobiliário</li>
+              <li>Direito Civil</li>
+              <li>Direito Bancário</li>
+              <li>Direito Tributário</li>
+              <li>Direito do Consumidor</li>
+            </ul>
+            <div class="advogado-contato">
+              <a href="tel:+5511949635787" class="advogado-link">
+                <i class="fas fa-phone"></i> (11) 94963-5787
+              </a>
+              <a href="https://wa.me/5511949635787" target="_blank" rel="noopener noreferrer" class="advogado-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- ================================================================
+             MODELO / EXEMPLO — duplique este bloco (comentado) para cada
+             novo integrante da equipe e depois remova os comentários "<!--"
+             e "-->" para ativar o card.
+
+             Passo a passo:
+             1. Troque o id="nome-sobrenome" por um identificador único
+                (sem espaços/acentos), ex: id="maria-silva"
+             2. Troque a foto, o nome, o cargo/OAB e a lista de especialidades
+             3. Troque o telefone nos dois links (tel: e wa.me)
+             4. Volte na página inicial (index.html), seção "areas-list", e
+                troque o href="equipe.html#kleber-pereira" das áreas que essa
+                pessoa vai atender para href="equipe.html#nome-sobrenome"
+             ================================================================ -->
+        <!--
+        <article class="advogado-card fade-in" id="nome-sobrenome">
+          <div class="advogado-photo">
+            <img src="foto-do-advogado.jpeg" alt="Nome Sobrenome">
+          </div>
+          <div class="advogado-info">
+            <h3>Nome Sobrenome</h3>
+            <span class="advogado-oab">OAB/SP · Advogado(a)</span>
+            <ul class="advogado-especialidades">
+              <li>Área de atuação 1</li>
+              <li>Área de atuação 2</li>
+            </ul>
+            <div class="advogado-contato">
+              <a href="tel:+55XXXXXXXXXXX" class="advogado-link">
+                <i class="fas fa-phone"></i> (XX) XXXXX-XXXX
+              </a>
+              <a href="https://wa.me/55XXXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="advogado-link">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+        -->
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-row">
+    <span>© 2026 Kleber Pereira & Advogados Associados</span>
+    <span>Guarulhos – SP</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
