@@ -266,7 +266,7 @@ header::after {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.15rem;
-  color: var(--gold-bright);
+  color: var(--parchment); /* era var(--gold-bright) */
   transition: background 0.25s ease;
 }
 
