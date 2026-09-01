@@ -253,7 +253,7 @@ header::after {
   border: 1px solid rgba(184, 149, 68, 0.3);
   border-radius: 4px;
   overflow: hidden;
-  background: rgba(247, 244, 236, 0.03);
+  background: rgb(247, 244, 236);
 }
 
 .acordeao summary {
