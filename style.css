@@ -253,7 +253,7 @@ header::after {
   border: 1px solid rgba(184, 149, 68, 0.3);
   border-radius: 4px;
   overflow: hidden;
-  background: rgb(247, 244, 236);
+  background: rgba(247, 244, 236, 0.04); /* leve tingimento claro sobre o fundo escuro */
 }
 
 .acordeao summary {
@@ -266,9 +266,10 @@ header::after {
   font-family: var(--serif);
   font-style: italic;
   font-size: 1.15rem;
-  color: var(--parchment); /* era var(--gold-bright) */
+  color: #ffffff;
   transition: background 0.25s ease;
 }
+
 
 .acordeao summary::-webkit-details-marker {
   display: none;
