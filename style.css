@@ -242,6 +242,70 @@ header::after {
   overflow: hidden;
 }
 
+.valores-lista {
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.acordeao {
+  border: 1px solid rgba(184, 149, 68, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(247, 244, 236, 0.03);
+}
+
+.acordeao summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold-bright);
+  transition: background 0.25s ease;
+}
+
+.acordeao summary::-webkit-details-marker {
+  display: none;
+}
+
+.acordeao summary::after {
+  content: '+';
+  font-family: sans-serif;
+  font-style: normal;
+  font-size: 1.4rem;
+  color: var(--gold-bright);
+  transition: transform 0.25s ease;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+.acordeao[open] summary::after {
+  content: '−';
+}
+
+.acordeao summary:hover {
+  background: rgba(184, 149, 68, 0.08);
+}
+
+.acordeao .conteudo {
+  padding: 0 26px 24px 26px;
+  color: rgba(247, 244, 236, 0.78);
+  font-size: 1.02rem;
+  line-height: 1.7;
+  max-width: 60ch;
+}
+
+@media (max-width: 720px) {
+  .valores-lista { margin-top: 38px; gap: 10px; }
+  .acordeao summary { padding: 16px 20px; font-size: 1.05rem; }
+  .acordeao .conteudo { padding: 0 20px 20px 20px; }
+}
 .principios::after {
   content: '';
   position: absolute;
