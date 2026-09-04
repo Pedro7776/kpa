@@ -42,3 +42,17 @@ function updateActiveLink() {
 
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load', updateActiveLink);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const banner = document.getElementById('cookie-banner');
+  const accepted = localStorage.getItem('cookiesAceitos');
+
+  if (!accepted) {
+    banner.style.display = 'flex';
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', function () {
+    localStorage.setItem('cookiesAceitos', 'true');
+    banner.style.display = 'none';
+  });
+});
