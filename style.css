@@ -736,7 +736,7 @@ header::after {
 /* Miniatura horizontal clicável */
 .equipe-foto {
   margin: 48px auto 0;
-  max-width: 420px;          /* ajuste aqui: 360, 480, 520... */
+  max-width: 680px;          /* era 420px — aumente/diminua até ficar bom */
   border: 1px solid var(--hairline);
   background: var(--panel);
   overflow: hidden;
