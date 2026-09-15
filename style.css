@@ -733,6 +733,35 @@ header::after {
   .advogado-especialidades,
   .advogado-contato { justify-content: center; }
 }
+/* Foto horizontal de encerramento da página de equipe */
+.equipe-foto {
+  margin: 48px 0 0;
+  border: 1px solid var(--hairline);
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.equipe-foto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;   /* mantém o sentido horizontal */
+  object-fit: cover;
+  object-position: center;
+}
+
+.equipe-foto figcaption {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  padding: 12px 16px;
+  border-top: 1px solid var(--hairline);
+}
+
+@media (max-width: 560px) {
+  .equipe-foto { margin-top: 32px; }
+  .equipe-foto img { aspect-ratio: 4 / 3; }  /* menos achatada no celular */
+  .equipe-foto figcaption { text-align: center; }
+}
 
 /* ============================================
    RESPONSIVE
