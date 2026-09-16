@@ -594,6 +594,21 @@ header::after {
 
 .footer-row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 
+.footer-social {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-social a {
+  color: rgba(247, 244, 236, 0.6);
+  font-size: 1rem;
+  transition: color 0.25s ease;
+}
+
+.footer-social a:hover {
+  color: var(--gold);
+}
+
 /* ============================================
    FADE-IN ON SCROLL
    ============================================ */
