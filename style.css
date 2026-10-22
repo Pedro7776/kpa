@@ -858,3 +858,32 @@ header::after {
   .membro-social a, .equipe-cta-btn { transition: none; }
   .membro-card:hover { transform: none; }
 }
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 960px) {
+  .hero-grid, .split, .contato-grid { grid-template-columns: 1fr; }
+  .hero-panel { order: -1; max-width: 340px; }
+  .escritorio-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 140px 140px 140px; }
+  .escritorio-frame.tall { grid-row: span 1; grid-column: span 2; }
+}
+
+@media (max-width: 720px) {
+  .menu-btn { display: block; }
+  .nav-menu {
+    position: fixed;
+    top: 0; right: -300px;
+    width: 280px; height: 100vh;
+    background: var(--ink);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 100px 30px;
+    gap: 26px;
+    transition: right 0.3s ease;
+  }
+  .nav-menu.show { right: 0; }
+  .nav-menu .nav-link { color: var(--parchment); }
+  .nav-cta { border-color: var(--gold); }
+  .areas-more { font-size: 0.88rem; }
+  .hero { padding: 70px 0 60px; }
+}
