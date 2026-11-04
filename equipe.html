@@ -208,5 +208,36 @@
   <span>Este site utiliza cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <a href="/privacidade.html" style="color:#4da6ff;">Política de Privacidade</a>.</span>
   <button id="cookie-accept" style="background:#4da6ff; color:#fff; border:none; padding:8px 18px; border-radius:4px; cursor:pointer; white-space:nowrap;">Aceitar</button>
 </div>
+
+<script>
+window.addEventListener("load", function () {
+  var area = new URLSearchParams(window.location.search).get("area");
+  if (!area) return;
+
+  function normalizar(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+  }
+
+  var alvo = normalizar(area);
+  var primeiro = null;
+
+  document.querySelectorAll(".membro-card").forEach(function (card) {
+    var tags = Array.prototype.map.call(card.querySelectorAll(".membro-tags li"), function (li) {
+      return normalizar(li.textContent);
+    });
+    if (tags.indexOf(alvo) !== -1) {
+      card.classList.add("membro-destaque");
+      card.classList.add("visible");
+      if (!primeiro) primeiro = card;
+    }
+  });
+
+  if (primeiro) {
+    setTimeout(function () {
+      primeiro.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 350);
+  }
+});
+</script>
 </body>
 </html>
