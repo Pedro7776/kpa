@@ -65,7 +65,7 @@
     <div class="equipe-grid">
 
       
-      <article class="membro-card is-lead fade-in" id="kleber-pereira">
+      <article class="membro-card is-lead fade-in" id="kleber-pereira" data-areas="civil familia">
         <div class="membro-photo">
           <img src="kleberpereiraadv.jpeg" alt="Kleber Pereira" loading="lazy">
         </div>
@@ -87,7 +87,7 @@
         </div>
       </article>
 
-      <article class="membro-card is-lead fade-in" id="IrineuCruz">
+     <article class="membro-card is-lead fade-in" id="IrineuCruz" data-areas="trabalhista previdenciario">
         <div class="membro-photo">
           <img src="irineucruzadv.jpeg" alt="Irineu Cruz advogado" loading="lazy">
         </div>
@@ -102,7 +102,7 @@
         </div>
       </article>
 
-       <article class="membro-card is-lead fade-in" id="Eliseu">
+       <article class="membro-card is-lead fade-in" id="Eliseu" data-areas="criminal">
         <div class="membro-photo">
           <img src="Eliseu.jpeg" alt="Eliseu" loading="lazy">
         </div>
@@ -214,20 +214,16 @@ window.addEventListener("load", function () {
   var area = new URLSearchParams(window.location.search).get("area");
   if (!area) return;
 
-  function normalizar(texto) {
-    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
-  }
-
-  var alvo = normalizar(area);
+  var alvo = area.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
   var primeiro = null;
 
   document.querySelectorAll(".membro-card").forEach(function (card) {
-    var tags = Array.prototype.map.call(card.querySelectorAll(".membro-tags li"), function (li) {
-      return normalizar(li.textContent);
-    });
-    if (tags.indexOf(alvo) !== -1) {
+    var areas = (card.getAttribute("data-areas") || "").split(/\s+/);
+    if (areas.indexOf(alvo) !== -1) {
       card.classList.add("membro-destaque");
       card.classList.add("visible");
+      card.style.opacity = "1";
+      card.style.transform = "none";
       if (!primeiro) primeiro = card;
     }
   });
@@ -235,7 +231,7 @@ window.addEventListener("load", function () {
   if (primeiro) {
     setTimeout(function () {
       primeiro.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 350);
+    }, 400);
   }
 });
 </script>
